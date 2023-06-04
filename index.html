@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const displayTime = () => {
+            const element = document.getElementById('clock')
+            const time = new Date()
+            element.innerHTML = time.toLocaleTimeString()
+            setTimeout(displayTime, 1000)
+        }
+
+        window.onload = displayTime
+
+        do {
+            var name = prompt("Введите ваше имя");		// Вернет строку
+            var correct = confirm("Вы ввели '" + name + "'.\n" +	// Вернет логич. знач. 
+                "Щелкните ОК, чтобы продолжить, или Отмена, чтобы повторить ввод.");
+        } while(!correct)
+
+    </script>
+    <style>
+        #clock {
+            font: bold 24pt sans;
+            background: #ddf;
+            padding: 10px;
+            border: solid black 2px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Цифровые часы</h1> <!-- Вывести заголовок -->
+
+    <span id="clock"></span> <!-- Время выводится здесь -->
+
+    <a href="JavaScript:alert(new Date().toLocaleTimeString());">
+        Который сейчас час?
+    </a>
+</body>
+</html>
